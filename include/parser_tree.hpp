@@ -65,5 +65,5 @@ public:
     TFunctionAST(std::unique_ptr<TPrototypeAST> proto, std::unique_ptr<TExprAST> body)
         : Proto_(std::move(proto)),
         Body_(std::move(body)) {}
-}
+};
 }

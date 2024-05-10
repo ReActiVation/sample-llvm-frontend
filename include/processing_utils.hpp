@@ -54,4 +54,8 @@ static int GetToken() {
     lastChar = getchar();
     return thisChar;
 }
+
+static int GetNextToken() {
+    return CurrentToken = GetToken();
+}
 }
