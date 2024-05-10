@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <memory>
 
-#include "parser_tree.hpp"
+#include "ast_tree.hpp"
 
 namespace {
 
@@ -10,7 +10,7 @@ std::unique_ptr<TExprAST> LogError(const char* errorString) {
     return nullptr;
 }
 
-std::unique_ptr<TPrototypeAST> LogError(const char* errorString) {
+std::unique_ptr<TPrototypeAST> LogErrorP(const char* errorString) {
     LogError(errorString);
     return nullptr;
 }
