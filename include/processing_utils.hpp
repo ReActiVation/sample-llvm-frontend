@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cctype>
 #include <cstdio>
 #include <cstdlib>
 
@@ -56,6 +57,17 @@ static int GetToken() {
 }
 
 static int GetNextToken() {
-    return CurrentToken = GetToken();
+    return g_CurrentToken = GetToken();
+}
+
+static int GetTokenPrecedence() {
+    if (!isascii(g_CurrentToken))
+        return -1;
+
+    int tokenPrecedence = g_BinaryOpPrecedence[g_CurrentToken];
+    if (tokenPrecedence <= 0)
+        return -1;
+
+    return tokenPrecedence;
 }
 }

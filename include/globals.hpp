@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <string>
 
 enum EToken {
@@ -14,4 +15,5 @@ enum EToken {
 
 static inline std::string g_IdentifierString;
 static inline double g_NumericValue;
-static inline int CurrentToken;
+static inline int g_CurrentToken;
+static inline std::map<char, int> g_BinaryOpPrecedence;
